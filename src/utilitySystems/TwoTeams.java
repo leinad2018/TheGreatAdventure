@@ -1,5 +1,8 @@
 package utilitySystems;
 
+import java.util.List;
+
+import unitSystems.ISquad;
 import unitSystems.IUnit;
 
 /**
@@ -8,11 +11,16 @@ import unitSystems.IUnit;
  *
  */
 public class TwoTeams {
-	public IUnit[] team1;
-	public IUnit[] team2;
+	public List<IUnit> team1;
+	public List<IUnit> team2;
 	
-	public TwoTeams(IUnit[] team1, IUnit[] team2){
+	public TwoTeams(List<IUnit> team1, List<IUnit> team2){
 		this.team1 = team1;
 		this.team2 = team2;
+	}
+	
+	public TwoTeams(ISquad team1, ISquad team2){
+		this.team1 = team1.getUnits();
+		this.team2 = team2.getUnits();
 	}
 }
