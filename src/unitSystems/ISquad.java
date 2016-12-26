@@ -10,6 +10,11 @@ import java.util.List;
  */
 public interface ISquad {
 	/**
+	 * Gets how many members are in this squad
+	 * @return the size of the squad
+	 */
+	public int size();
+	/**
 	 * Adds the inputed units to the squad
 	 * @param toAdd the units to add
 	 * @return false if the addition was successful
@@ -23,10 +28,25 @@ public interface ISquad {
 	 */
 	public boolean removeUnits(List<IUnit> toRemove);
 	/**
+	 * Does damage to the squad and kills units if their health hits 0
+	 * @param damage the amount of damage to do to the squad
+	 */
+	public void doDamageToSquad(int damage);
+	/**
 	 * get all units in this squad
 	 * @return units in squad
 	 */
 	public List<IUnit> getUnits();
+	/**
+	 * Adds the attack of all units in the squad
+	 * @return the total attack power
+	 */
+	public int getTotalAttack();
+	/**
+	 * Adds the defense of all units in the squad
+	 * @return the total defense power
+	 */
+	public int getTotalDefense();
 	
 	public Point getPosition();
 	/**
