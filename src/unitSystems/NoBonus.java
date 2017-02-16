@@ -3,7 +3,7 @@ package unitSystems;
 import java.awt.Point;
 import java.util.List;
 
-import display.BoardDisplay;
+import visualSystems.BoardDisplay;
 
 public class NoBonus implements ISquad {
 	private List<IUnit> members;
@@ -37,7 +37,6 @@ public class NoBonus implements ISquad {
 	
 	@Override
 	public void doDamageToSquad(int damage){
-		System.out.println(members);
 		int damageToDo = damage;
 		while(members.size() > 0 && damageToDo > 0){
 			int temp = members.get(0).getHealth();
@@ -46,7 +45,6 @@ public class NoBonus implements ISquad {
 			}
 			damageToDo-= Math.min(temp,damageToDo);
 		}
-		System.out.println(members);
 	}
 
 	@Override

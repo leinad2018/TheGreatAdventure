@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import combatSystems.Combat;
-import display.BoardDisplay;
 import unitSystems.ISquad;
 import unitSystems.IUnit;
 import unitSystems.NoBonus;
 import unitSystems.TestUnit;
 import utilitySystems.TwoTeams;
+import visualSystems.BoardDisplay;
 
 public class Test1 {
 
