@@ -5,47 +5,45 @@ import java.util.List;
 
 import visualSystems.BoardDisplay;
 
-public class SquadBase implements ISquad {
+public class SquadBase{
 	private List<IUnit> members;
 	private Point position;
 	
+	/**
+	 * Extend this class to create custom squads that have unique modifiers
+	 * @param units the units in this squad
+	 * @param pos the position of this squad
+	 */
 	public SquadBase(List<IUnit> units, Point pos){
 		members = units;
 		position = pos;
 	}
 	
-	@Override
 	public int size(){
 		return members.size();
 	}
 	
-	@Override
 	public boolean addUnits(List<IUnit> toAdd) {
 		return !members.addAll(toAdd);
 	}
 
-	@Override
 	public boolean addUnits(IUnit toAdd) {
 		return !members.add(toAdd);
 	}
 
 	//implement here
-	@Override
 	public boolean removeUnits(List<IUnit> toRemove) {
 		return true;
 	}
 
-	@Override
 	public List<IUnit> getUnits() {
 		return members;
 	}
 	
-	@Override
 	public Point getPosition() {
 		return position;
 	}
 
-	@Override
 	public boolean setPosition(Point newPosition) {
 		int boardSize = BoardDisplay.getSize();
 		if(newPosition.getX() < boardSize && newPosition.getY() < boardSize){
@@ -55,7 +53,6 @@ public class SquadBase implements ISquad {
 		return true;
 	}
 	
-	@Override
 	public int getTotalAttack(){
 		int attackPow = 0;
 		for (int attackUnit = 0; attackUnit < members.size(); attackUnit++) {
@@ -64,7 +61,6 @@ public class SquadBase implements ISquad {
 		return attackPow;
 	}
 	
-	@Override
 	public int getTotalDefense(){
 		int defensePow = 0;
 		for (int defenseUnit = 0; defenseUnit < members.size(); defenseUnit++) {
@@ -73,7 +69,6 @@ public class SquadBase implements ISquad {
 		return defensePow;
 	}
 	
-	@Override
 	public void doDamageToSquad(int damage){
 		int damageToDo = damage;
 		while(members.size() > 0 && damageToDo > 0){

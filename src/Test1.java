@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import combatSystems.Combat;
-import unitSystems.ISquad;
 import unitSystems.IUnit;
 import unitSystems.NoBonus;
+import unitSystems.SquadBase;
 import unitSystems.TestUnit;
 import utilitySystems.TwoTeams;
 import visualSystems.BoardDisplay;
@@ -21,9 +21,9 @@ public class Test1 {
 		for(int i = 0; i < 1; i++){
 			team2.add(new TestUnit());
 		}
-		ISquad team1s = new NoBonus(team1,new Point(0,0));
-		ISquad team2s = new NoBonus(team2,new Point(1,9));
-		List<ISquad> tempList = new ArrayList<>();
+		SquadBase team1s = new NoBonus(team1,new Point(0,0));
+		SquadBase team2s = new NoBonus(team2,new Point(1,9));
+		List<SquadBase> tempList = new ArrayList<>();
 		tempList.add(team2s);
 		tempList.add(team1s);
 		BoardDisplay board = new BoardDisplay(10,tempList);

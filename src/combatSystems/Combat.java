@@ -1,12 +1,12 @@
 package combatSystems;
 
-import unitSystems.ISquad;
+import unitSystems.SquadBase;
 import utilitySystems.TwoTeams;
 
 public class Combat {
 	public static TwoTeams battle(TwoTeams teams) {
-		ISquad attack = teams.getAttacker();
-		ISquad defense = teams.getDefender();
+		SquadBase attack = teams.getAttacker();
+		SquadBase defense = teams.getDefender();
 		attack.doDamageToSquad(defense.getTotalDefense());
 		defense.doDamageToSquad(attack.getTotalAttack());
 		

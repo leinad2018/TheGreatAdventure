@@ -3,13 +3,13 @@ package visualSystems;
 import java.awt.Point;
 import java.util.List;
 
-import unitSystems.ISquad;
+import unitSystems.SquadBase;
 //Need to make into a singleton 
 public class BoardDisplay {
 	private char[][] board;
 	private static int size;
-	private List<ISquad> squads;
-	public BoardDisplay(int size, List<ISquad> squadsIn){
+	private List<SquadBase> squads;
+	public BoardDisplay(int size, List<SquadBase> squadsIn){
 		BoardDisplay.size = size;
 		squads = squadsIn;
 		board = new char[size][size];

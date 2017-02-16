@@ -1,9 +1,9 @@
 package tileSystems;
 
-import unitSystems.ISquad;
+import unitSystems.SquadBase;
 
 public class TileInfo {
-	public ISquad squad;
+	public SquadBase squad;
 	private TileType tileType;
 	
 	public boolean hasSquad(){
