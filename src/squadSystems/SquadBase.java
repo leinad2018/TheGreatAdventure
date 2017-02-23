@@ -1,8 +1,9 @@
-package unitSystems;
+package squadSystems;
 
 import java.awt.Point;
 import java.util.List;
 
+import unitSystems.IUnit;
 import visualSystems.BoardDisplay;
 
 public class SquadBase{
@@ -31,7 +32,7 @@ public class SquadBase{
 		return !members.add(toAdd);
 	}
 
-	//implement here
+	//TODO implement here
 	public boolean removeUnits(List<IUnit> toRemove) {
 		return true;
 	}
@@ -44,6 +45,7 @@ public class SquadBase{
 		return position;
 	}
 
+	//TODO might have to make non unlimited movement, but maybe not here
 	public boolean setPosition(Point newPosition) {
 		int boardSize = BoardDisplay.getSize();
 		if(newPosition.getX() < boardSize && newPosition.getY() < boardSize){
@@ -72,11 +74,11 @@ public class SquadBase{
 	public void doDamageToSquad(int damage){
 		int damageToDo = damage;
 		while(members.size() > 0 && damageToDo > 0){
-			int temp = members.get(0).getHealth();
-			if(members.get(0).doDamage(Math.min(temp,damageToDo))){
+			int unitHealth = members.get(0).getHealth();
+			if(members.get(0).takeDamage(Math.min(unitHealth,damageToDo))){
 				members.remove(0);
 			}
-			damageToDo-= Math.min(temp,damageToDo);
+			damageToDo-= Math.min(unitHealth,damageToDo);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package tileSystems;
 
-import unitSystems.SquadBase;
+import squadSystems.SquadBase;
 
 public class TileInfo {
 	public SquadBase squad;

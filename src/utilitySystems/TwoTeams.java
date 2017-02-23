@@ -1,6 +1,6 @@
 package utilitySystems;
 
-import unitSystems.SquadBase;
+import squadSystems.SquadBase;
 
 /**
  * A class that is used to return a pair of teams and is primarily used for combat

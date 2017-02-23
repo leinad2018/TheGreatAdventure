@@ -4,6 +4,12 @@ import utilitySystems.OutputConfigured;
 
 public interface IUnit extends OutputConfigured {
 	/**
+	 * The priority of the unit is used to determine order for taking damage<br>
+	 * 1 is the lowest priority(take damage first)
+	 * @return The priority of the unit
+	 */
+	public int getPriority();
+	/**
 	 * 
 	 * @return the health of the unit
 	 */
@@ -12,8 +18,9 @@ public interface IUnit extends OutputConfigured {
 	 * Does damage to the Unit
 	 * @param damage the amount of damage to do
 	 * @return true if unit should die false otherwise
+	 * @throws IllegalArgumentException if damage is larger than unit health
 	 */
-	public boolean doDamage(int damage);
+	public boolean takeDamage(int damage);
 	/**
 	 * This is how much damage the unit should do when attacking
 	 * @return the attack strength of the unit

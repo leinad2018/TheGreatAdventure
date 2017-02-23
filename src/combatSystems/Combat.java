@@ -1,6 +1,6 @@
 package combatSystems;
 
-import unitSystems.SquadBase;
+import squadSystems.SquadBase;
 import utilitySystems.TwoTeams;
 
 public class Combat {
