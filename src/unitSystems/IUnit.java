@@ -1,5 +1,6 @@
 package unitSystems;
 
+import utilitySystems.AttributeValue;
 import utilitySystems.OutputConfigured;
 
 public interface IUnit extends OutputConfigured {
@@ -31,4 +32,9 @@ public interface IUnit extends OutputConfigured {
 	 * @return the defense strength of the unit
 	 */
 	public int getDefenseStrength();
+	/**
+	 * Gets any attributes that modify the entire squad not just the single unit
+	 * @return A squad attribute from this unit 
+	 */
+	public AttributeValue getAttribute();
 }

@@ -1,5 +1,7 @@
 package unitSystems;
 
+import utilitySystems.AttributeValue;
+
 public class UnitBase implements IUnit {
 	protected final static int STARTHEALTH = 1;
 	protected final static int ATTACKPOW = 1;
@@ -44,5 +46,9 @@ public class UnitBase implements IUnit {
 	
 	public String toString(){
 		return "UnitBase: Attack="+ATTACKPOW+" Defense="+DEFENSEPOW+" Health="+health;
+	}
+	
+	public AttributeValue getAttribute(){
+		return null;
 	}
 }
