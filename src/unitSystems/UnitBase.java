@@ -3,7 +3,7 @@ package unitSystems;
 import utilitySystems.AttributeValue;
 
 public class UnitBase implements IUnit {
-	protected final static int STARTHEALTH = 1;
+	protected final static int MAXHEALTH = 1;
 	protected final static int ATTACKPOW = 1;
 	protected final static int DEFENSEPOW = 1;
 	protected final static int PRIORITY = 3;
@@ -14,7 +14,7 @@ public class UnitBase implements IUnit {
 	 * Units do not have to extend however as this is just for convenience.
 	 */
 	public UnitBase(){
-		health = STARTHEALTH;
+		health = MAXHEALTH;
 	}
 	
 	public int getPriority(){
@@ -50,5 +50,10 @@ public class UnitBase implements IUnit {
 	
 	public AttributeValue getAttribute(){
 		return null;
+	}
+	
+	public int healUnit(int healAmount){
+		int healingDone = Math.min(healAmount, MAXHEALTH-health);
+		return healAmount - healingDone;
 	}
 }

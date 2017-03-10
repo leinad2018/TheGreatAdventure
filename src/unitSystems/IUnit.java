@@ -37,4 +37,10 @@ public interface IUnit extends OutputConfigured {
 	 * @return A squad attribute from this unit 
 	 */
 	public AttributeValue getAttribute();
+	/**
+	 * Heals the unit's health by heal amount
+	 * @param healAmount the amount of health to heal
+	 * @return the leftover heal after the unit has reached full health. Will not be negative.
+	 */
+	public int healUnit(int healAmount);
 }
