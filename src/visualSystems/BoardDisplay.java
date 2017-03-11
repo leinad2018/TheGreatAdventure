@@ -4,12 +4,19 @@ import java.awt.Point;
 import java.util.List;
 
 import squadSystems.SquadBase;
+import tileSystems.Tile;
 //Need to make into a singleton 
 public class BoardDisplay {
-	private char[][] board;
+	private Tile[][] board;
 	private static int size;
-	private List<SquadBase> squads;
 	private static BoardDisplay gameBoard;
+	
+	public static BoardDisplay getInstance(){
+		if(gameBoard == null){
+			gameBoard = new BoardDisplay(10, null);
+		}
+		return gameBoard;
+	}
 	
 	public static BoardDisplay getInstance(int size, List<SquadBase> squadsIn){
 		if(gameBoard == null){
@@ -20,17 +27,20 @@ public class BoardDisplay {
 	
 	private BoardDisplay(int size, List<SquadBase> squadsIn){
 		BoardDisplay.size = size;
-		squads = squadsIn;
-		board = new char[size][size];
+		board = new Tile[size][size];
 		for(int x = 0; x < size; x++){
 			for(int y = 0; y < size; y++){
-				board[x][y] = 'G';
+				board[x][y] = new Tile();
 			}
 		}
-		for(int i = 0; i < squads.size(); i++){
-			Point tempPos = squads.get(i).getPosition();
-			board[(int)tempPos.getX()][(int)tempPos.getY()] = 'S';
+		for(int i = 0; i < squadsIn.size(); i++){
+			Point tempPos = squadsIn.get(i).getPosition();
+			board[(int)tempPos.getX()][(int)tempPos.getY()].setDefender(squadsIn.get(i));
 		}
+	}
+	
+	public Tile[][] getBoard(){
+		return board;
 	}
 	
 	public static int getSize(){
